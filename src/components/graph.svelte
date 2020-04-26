@@ -138,6 +138,12 @@
           .forEach(node => graph.remove(node));
       }
     });
+
+    graph.on("dblclick", e => {
+      const nodes = graph.getNodes().map(item => item.getModel());
+      const edges = graph.getEdges().map(item => item.getModel());
+      console.log(JSON.stringify({nodes, edges}));
+    });
   });
 </script>
 

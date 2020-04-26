@@ -1,129 +1,100 @@
-import {data as dataNode4} from './node4';
+import { data as dataNode4 } from "./node4";
 
 export const node4 = dataNode4;
 
 export const data = {
   nodes: [
-    {
-      id: "node1",
-      type: "task-input",
-    },
-    {
-      id: "arc",
-      type: "task-output",
-    },
-    {
-      id: "arc2",
-      type: "task-output",
-    },
+    { id: "arc", type: "task-output" },
     {
       id: "node2",
       label: "RouterFunctions::route",
-      x: 300,
-      y: 300,
+      x: 925,
+      y: 374,
       inputs: [
         {
-          name: "predicate",
-          type: "string",
+          name: "requestPredicate",
+          type: "RequestPredicate",
         },
         {
-          name: "input2",
-          type: "string",
-        },
-        {
-          name: "input3",
-          type: "string",
+          name: "handlerFunction",
+          type: "HandlerFunction",
         },
       ],
-      outputs: [
-        {
-          name: "out",
-          type: "string",
-        },
-      ],
+      outputs: [{ name: "routerFunction", type: "RouterFunction" }],
+    },
+    {
+      id: "nodeString",
+      label: "/example",
+      x: 337,
+      y: 376,
+      outputs: [{ name: "value", type: "string" }],
     },
     {
       id: "node3",
-      label: "Flux<String>::map",
-      x: 1000,
-      y: 500,
+      label: "RouterFunction::and",
+      x: 1266,
+      y: 354,
       inputs: [
-        {
-          name: "input",
-          type: "string",
-        },
-        {
-          name: "lambda",
-          type: "Function<String, String>",
-        },
+        { name: "routerFunction", type: "RouterFunction" },
+        { name: "routerFunction2", type: "RouterFunction" },
       ],
-      outputs: [
-        {
-          name: "output",
-          type: "string",
-        },
-      ],
+      outputs: [{ name: "routerFunction", type: "RouterFunction" }],
     },
     {
       id: "node4",
-      label: "rect4",
-      x: 600,
-      y: 200,
-      inputs: [
-        {
-          name: "input1",
-          type: "string",
-        },
-      ],
-      outputs: [
-        {
-          name: "out",
-          type: "string",
-        },
-      ],
+      label: "RequestPredicates::GET",
+      x: 583,
+      y: 364,
+      inputs: [{ name: "path", type: "string" }],
+      outputs: [{ name: "requestPredicate", type: "RequestPredicate" }],
     },
     {
       id: "node5",
-      label: "365",
-      collapsed: true,
-      x: 800,
-      y: 300,
-      outputs: [
-        {
-          name: "value",
-          type: "int",
-        },
-      ],
+      label: "HandlerFunction<ServerResponse>",
+      collapsed: false,
+      x: 554,
+      y: 494,
+      inputs: [{ name: "ServerRequest", type: "ServerRequest" }],
+      outputs: [{ name: "Mono<ServerResponse>", type: "Mono<ServerResponse>" }],
     },
   ],
   edges: [
     {
-      source: "node1",
+      source: "node4",
+      sourceAnchor: 1,
       target: "node2",
-      // label: "Flex<String>",
-      color: "blue",
+      color: "#ffa000",
+      type: "cubic-horizontal",
       targetAnchor: 0,
     },
     {
-      source: "node2",
-      target: "node3",
-      // label: "Flex<String>",
+      source: "nodeString",
+      sourceAnchor: 0,
+      target: "node4",
       color: "blue",
-      sourceAnchor: 3,
+      type: "cubic-horizontal",
       targetAnchor: 0,
     },
     {
       source: "node5",
-      target: "node3",
-      // label: "Function<String, String>",
+      sourceAnchor: 2,
+      target: "node2",
       color: "darkgrey",
-      sourceAnchor: 1,
+      type: "cubic-horizontal",
       targetAnchor: 1,
+    },
+    {
+      source: "node2",
+      sourceAnchor: 2,
+      target: "node3",
+      color: "#00acc1",
+      type: "cubic-horizontal",
+      targetAnchor: 0,
     },
   ],
 };
 
 export default {
-  node4, 
+  node4,
   data,
-}
+};
