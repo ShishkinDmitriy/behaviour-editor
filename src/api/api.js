@@ -18,12 +18,12 @@ export const data = {
     },
     {
       id: "node2",
-      label: "ToString",
+      label: "RouterFunctions::route",
       x: 300,
       y: 300,
       inputs: [
         {
-          name: "input1",
+          name: "predicate",
           type: "string",
         },
         {
