@@ -21,6 +21,10 @@ export default {
         stroke: "#263238",
         lineWidth: 0.5,
         fill: "#9ccc65",
+        shadowOffsetX: 5,
+        shadowOffsetY: 5,
+        shadowColor: '#00000022',
+        shadowBlur: 10,
       },
       headerStyle: {
         fontSize: 14,
@@ -29,10 +33,12 @@ export default {
       },
       collapsedStyle: {
         fill: "#263238",
+        cursor: 'pointer',
       },
       portBgStyle: {
         fill: "blue",
-        opacity: 0.0
+        opacity: 0.0,
+        cursor: 'pointer',
       },
       portLabelStyle: {
         fontSize: 11,
@@ -42,6 +48,7 @@ export default {
       portCircleStyle: {
         r: 4,
         stroke: "#263238",
+        cursor: 'pointer',
       },
     },
     stateStyles: {

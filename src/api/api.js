@@ -21,6 +21,7 @@ export const data = {
         },
       ],
       outputs: [{ name: "routerFunction", type: "RouterFunction" }],
+      groupId: "qwe",
     },
     {
       id: "nodeString",
@@ -28,6 +29,7 @@ export const data = {
       x: 337,
       y: 376,
       outputs: [{ name: "value", type: "string" }],
+      groupId: "qwe",
     },
     {
       id: "node3",
@@ -47,6 +49,7 @@ export const data = {
       y: 364,
       inputs: [{ name: "path", type: "string" }],
       outputs: [{ name: "requestPredicate", type: "RequestPredicate" }],
+      groupId: "qwe",
     },
     {
       id: "node5",
@@ -56,6 +59,7 @@ export const data = {
       y: 494,
       inputs: [{ name: "ServerRequest", type: "ServerRequest" }],
       outputs: [{ name: "Mono<ServerResponse>", type: "Mono<ServerResponse>" }],
+      groupId: "qwe",
     },
   ],
   edges: [
